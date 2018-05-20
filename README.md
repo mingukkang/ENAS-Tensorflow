@@ -16,3 +16,5 @@ python main_controller_child_trainer.py
 - Python 3.5
 
 - Tensorflow-gpu version:  1.4.0rc2 
+
+- OpenCV 3.4.1
