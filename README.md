@@ -19,7 +19,7 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
 
-**<br/> Next, you should rewrite the code below both main_controller_child_trainer.py and main_child_trainer.py**
+**<br/> Next, you should rewrite the code below**
 
 ```
 Located in main_controller_child_train.py and main_child_trainer.py
