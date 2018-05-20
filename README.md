@@ -24,6 +24,8 @@ python main_controller_child_trainer.py
 
 **Autors' implementation: https://github.com/melodyguan/enas**
 
+**Data Pipeline: https://github.com/MINGUKKANG/MNIST-Tensorflow-Code
+
 ## License
 All rights related to this code are reserved to the author of ENAS
 
