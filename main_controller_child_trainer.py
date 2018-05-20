@@ -288,14 +288,14 @@ def train():
                             if ct_step % FLAGS.log_every == 0:
                                 curr_time = time.time()
                                 log_string = ""
-                                log_string += "ctrl_step={:<6d}".format(controller_step)
-                                log_string += " loss={:<7.3f}".format(loss)
-                                log_string += " ent={:<5.2f}".format(entropy)
-                                log_string += " lr={:<6.4f}".format(lr)
-                                log_string += " |g|={:<8.4f}".format(gn)
-                                log_string += " acc={:<6.4f}".format(val_acc)
-                                log_string += " bl={:<5.2f}".format(bl)
-                                log_string += " mins={:<.2f}".format(
+                                log_string += "ctrl_step = {:<6d}".format(controller_step)
+                                log_string += " loss = {:<7.3f}".format(loss)
+                                log_string += " ent = {:<5.2f}".format(entropy)
+                                log_string += " lr = {:<6.4f}".format(lr)
+                                log_string += " |g| = {:<8.4f}".format(gn)
+                                log_string += " acc = {:<6.4f}".format(val_acc)
+                                log_string += " bl = {:<5.2f}".format(bl)
+                                log_string += " mins = {:<.2f}".format(
                                     float(curr_time - start_time) / 60)
                                 print(log_string)
 
