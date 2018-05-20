@@ -48,6 +48,8 @@ python main_child_trainer.py -n child_fixed_arc "0 1 1 0 0 1 2 4 2 4 1 0 1 1 4 3
 
 ## Explained
 
+will be updated
+
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
