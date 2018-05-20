@@ -165,8 +165,6 @@ def get_ops(images, labels):
         child_model.connect_controller(controller_model)
         controller_model.build_trainer(child_model)
 
-        # 1 train_step means you just optimize one batch!
-
         controller_ops = {
             "train_step": controller_model.train_step,
             "loss": controller_model.loss,
