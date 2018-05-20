@@ -4,3 +4,7 @@ I will explain the code of Efficient Neural Architecture Search(ENAS), especiall
 
 And unlike the author's code, I rewrite the code of ENAS  for windows user!
 
+At first you can run the ENAS with the following short code:
+```
+python main_controller_child_trainer.py
+```
