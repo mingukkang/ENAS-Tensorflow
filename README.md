@@ -4,28 +4,25 @@ I will explain the code of Efficient Neural Architecture Search(ENAS), especiall
 
 And unlike the author's code, I rewrite the code of ENAS  for windows user!
 
-<br/>At first, you should unpack the attacged data as shown below.
+**<br/>At first, you should unpack the attacged data as shown below.**
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
 
-<br/> Next, you should rewrite the code below for you situation.
+**<br/> Next, you should rewrite the code below to suit your situation**
+
 ```python
 DEFINE_string("output_dir", "./output" , "")
-
 DEFINE_string("train_data_dir", "./data/train", "")
-
 DEFINE_string("val_data_dir", "./data/valid", "")
-
 DEFINE_string("test_data_dir", "./data/test", "")
-
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 ```
 
-<br/>You can train Controller of ENAS with the following short code:
+**<br/>You can train Controller of ENAS with the following short code:**
 ```
 python main_controller_child_trainer.py
 ```
-<br/>After finishing,   you can train the child network with the following code:
+**<br/>After finishing,   you can train the child network with the following code:**
 ```
 python main_child_trainer.py -n child_fixed_arc "0 1 1 0 0 1 2 4 2 4 1 0 1 1 4 3 2 2 3 4 1 1 1 2 0 1 0 3 1 3 0 3 1 2 3 3 1 2 5 0"
 ```
