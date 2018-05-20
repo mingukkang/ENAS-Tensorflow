@@ -1,6 +1,5 @@
 import os
 import sys
-import pdb
 
 import numpy as np
 import tensorflow as tf
