@@ -7,7 +7,7 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 ```tex
 At first you can run the ENAS with the following short code:
 ```
-
+Some Markdown text with <span style="color:blue">some *blue* text</span>.
 ```
 python main_controller_child_trainer.py
 ```
