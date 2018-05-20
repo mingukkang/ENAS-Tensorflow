@@ -22,10 +22,10 @@ flags = tf.app.flags
 FLAGS = flags.FLAGS
 
 ################## YOU Should write under parameter ######################
-DEFINE_string("output_dir", "./output" , "            /home/minguk/Documents/ENAS/output")
-DEFINE_string("train_data_dir", "./data/train", "  /home/minguk/Documents/ENAS/data/training")
-DEFINE_string("val_data_dir", "./data/valid", "  /home/minguk/Documents/ENAS/data/validation")
-DEFINE_string("test_data_dir", "./data/test", "    /home/minguk/Documents/ENAS/data/testing")
+DEFINE_string("output_dir", "./output" , "")
+DEFINE_string("train_data_dir", "./data/train", "")
+DEFINE_string("val_data_dir", "./data/valid", "")
+DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 ##########################################################################
 
