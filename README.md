@@ -22,4 +22,4 @@ python main_controller_child_trainer.py
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
-**Autors implementation: https://github.com/melodyguan/enas**
+**Autors' implementation: https://github.com/melodyguan/enas**
