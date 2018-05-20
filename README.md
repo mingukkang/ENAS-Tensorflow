@@ -1,3 +1,4 @@
+
 ## ENAS-Tensorflow
 
 I will explain the code of Efficient Neural Architecture Search(ENAS), especially micro search case.
@@ -8,3 +9,10 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 ```
 python main_controller_child_trainer.py
 ```
+
+## Enviroment
+- OS: Window 10(Ubuntu 16.04 is possible)
+
+- Python 3.5
+
+- Tensorflow-gpu version:  1.4.0rc2 
