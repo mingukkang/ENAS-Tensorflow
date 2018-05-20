@@ -10,7 +10,7 @@ python main_controller_child_trainer.py
 ```
 <br/>After finishing training the controller,  you can train the child network with the following code:
 
-**(important)The following string in the below code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child.py**
+**The following string in the below code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child.py**
 
 **the first 14 numbers are for the architecture for conv layers and the rest are for pooling layers**
 
