@@ -31,7 +31,7 @@ DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 ```
 
-**<br/>You can train Controller of ENAS with the following short code:**
+**<br/>Then, You can train Controller of ENAS with the following short code:**
 ```
 python main_controller_child_trainer.py
 ```
