@@ -1,8 +1,10 @@
 ## ENAS-Tensorflow
 
-I will explain the code of Efficient Neural Architecture Search(ENAS), especially micro search case.
+I will explain the code of Efficient Neural Architecture Search(ENAS), especially case of micro search.
 
-And unlike the author's code, I rewrite the code of ENAS  for windows user!
+Unlike the author's code, It can work in a windows 10 enviroment and you can use your own data.
+
+
 
 ## Enviroment
 - OS: Window 10(Ubuntu 16.04 is possible)
