@@ -2,7 +2,7 @@
 
 I will explain the code of Efficient Neural Architecture Search(ENAS), especially case of micro search.
 
-Unlike the author's code, It can work in a windows 10 enviroment and you can use your own data.
+Unlike the author's code, This code can work in a windows 10 enviroment and you can use your own data.
 
 
 
