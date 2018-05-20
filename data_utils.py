@@ -3,7 +3,6 @@ import sys
 import cv2
 import numpy as np
 from glob import *
-import pdb
 
 import utils
 
