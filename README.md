@@ -25,4 +25,6 @@ python main_controller_child_trainer.py
 **Autors' implementation: https://github.com/melodyguan/enas**
 
 ## License
-All rights related to this code are reserved to the author of ENAS(Hieu Pham, Melody Y. Guan, Barret Zoph, Quoc V. Le, Jeff Dean)
+All rights related to this code are reserved to the author of ENAS
+
+(Hieu Pham, Melody Y. Guan, Barret Zoph, Quoc V. Le, Jeff Dean)
