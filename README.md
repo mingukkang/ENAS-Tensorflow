@@ -21,3 +21,8 @@ Roses are <span style="color:red">red</span>, violets are <span style="color:blu
 + this will be highlighted in green
 - this will be highlighted in red
 ```
+
+
+```json
+   // code for coloring
+```
