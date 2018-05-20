@@ -1,3 +1,4 @@
+
 ## ENAS-Tensorflow
 
 I will explain the code of Efficient Neural Architecture Search(ENAS), especially micro search case.
@@ -23,3 +24,6 @@ python main_controller_child_trainer.py
 **Paper: https://arxiv.org/abs/1802.03268**
 
 **Autors' implementation: https://github.com/melodyguan/enas**
+
+## License
+All rights are reserved to the author of ENAS(Hieu Pham, Melody Y. Guan, Barret Zoph, Quoc V. Le, Jeff Dean)
