@@ -22,6 +22,8 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 **<br/> Next, you should rewrite the code below both main_controller_child_trainer.py and main_child_trainer.py**
 
 ```python
+Located in main_controller_child_train.py and main_child_trainer.py
+
 DEFINE_string("output_dir", "./output" , "")
 DEFINE_string("train_data_dir", "./data/train", "")
 DEFINE_string("val_data_dir", "./data/valid", "")
