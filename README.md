@@ -18,8 +18,8 @@ python main_controller_child_trainer.py
 Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.
 
 ```diff
-+ this will be highlighted in green
-- this will be highlighted in red
+this will be highlighted in green
+this will be highlighted in red
 ```
 
 
