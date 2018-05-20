@@ -19,7 +19,7 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
 
-**<br/> Next, you should rewrite the code below to suit your situation**
+**<br/> Next, you should rewrite the code below to suit your situation both main_controller_child_trainer and main_child_trainer.**
 
 ```python
 DEFINE_string("output_dir", "./output" , "")
