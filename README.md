@@ -8,7 +8,7 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 ```
 python main_controller_child_trainer.py
 ```
-<br/>After finishing training the controller,  you can train the child network with the following code:
+<br/>After finishing, you can train the child network with the following code:
 
 **The following string in the below code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child.py**
 
