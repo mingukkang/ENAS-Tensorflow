@@ -13,7 +13,7 @@ python main_controller_child_trainer.py
 python main_child_trainer.py -n child_fixed_arc "0 1 1 0 0 1 2 4 2 4 1 0 1 1 4 3 2 2 3 4 1 1 1 2 0 1 0 3 1 3 0 3 1 2 3 3 1 2 5 0"
 ```
 
-**The following string in the below code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child.py**
+**The string in the above code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child.py**
 
 **the first 14 numbers are for the architecture for conv layers and the rest are for pooling layers**
 
