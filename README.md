@@ -4,9 +4,10 @@ I will explain the code of Efficient Neural Architecture Search(ENAS), especiall
 
 And unlike the author's code, I rewrite the code of ENAS  for windows user!
 
-Before running the code, you should unpack the attacged data as shown below.
+<br/>Before running the code, you should unpack the attacged data as shown below.
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
+
 <br/>You can train Controller of ENAS with the following short code:
 ```
 python main_controller_child_trainer.py
