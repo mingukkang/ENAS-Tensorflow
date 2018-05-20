@@ -1,3 +1,4 @@
+
 ## ENAS-Tensorflow
 
 I will explain the code of Efficient Neural Architecture Search(ENAS), especially micro search case.
@@ -9,6 +10,7 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 python main_controller_child_trainer.py
 ```
 After finishing training the controller,  you can train the child network with the following code:
+**(important)The following string in the below code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child**
 ```
 python main_child_trainer.py -n child_fixed_arc "0 1 1 0 0 1 2 4 2 4 1 0 1 1 4 3 2 2 3 4 1 1 1 2 0 1 0 3 1 3 0 3 1 2 3 3 1 2 5 0"
 ```
