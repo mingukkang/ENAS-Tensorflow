@@ -8,7 +8,7 @@ And unlike the author's code, I rewrite the code of ENAS  for windows user!
 ```
 python main_controller_child_trainer.py
 ```
-After finishing training the controller, you can train child network with the following code:
+After finishing training the controller,  you can train the child network with the following code:
 ```
 python main_child_trainer.py -n child_fixed_arc ""
 ```
