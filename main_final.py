@@ -1,9 +1,7 @@
-import pdb
 import os
 import shutil
 import sys
 import time
-import pdb
 
 import tensorflow as tf
 import numpy as np
