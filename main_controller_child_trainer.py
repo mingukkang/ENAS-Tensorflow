@@ -318,7 +318,7 @@ def train():
                                         end = start + 2 * FLAGS.child_num_branches + layer_id
                                     print(np.reshape(arc[start: end], [-1]))
                                     start = end
-                            print("val_acc={:<6.4f}".format(acc))
+                            print("val_acc = {:<6.4f}".format(acc))
                             print("-" * 80)
 
                     print("Epoch {}: Eval".format(epoch))
