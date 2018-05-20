@@ -1,3 +1,4 @@
+
 ```
 <span style="color:blue">some *This is Blue italic.* text</span>
 ```
@@ -15,3 +16,8 @@ Some Markdown text with <span style="color:blue">some *blue* text</span>.
 python main_controller_child_trainer.py
 ```
 Roses are <span style="color:red">red</span>, violets are <span style="color:blue">blue</span>.
+
+```diff
++ this will be highlighted in green
+- this will be highlighted in red
+```
