@@ -4,6 +4,17 @@ I will explain the code of Efficient Neural Architecture Search(ENAS), especiall
 
 And unlike the author's code, I rewrite the code of ENAS  for windows user!
 
+## Enviroment
+- OS: Window 10(Ubuntu 16.04 is possible)
+
+- Python 3.5
+
+- Tensorflow-gpu version:  1.4.0rc2 
+
+- OpenCV 3.4.1
+
+## How to run
+
 **<br/>At first, you should unpack the attacged data as shown below.**
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
@@ -30,16 +41,6 @@ python main_child_trainer.py -n child_fixed_arc "0 1 1 0 0 1 2 4 2 4 1 0 1 1 4 3
 **The string in the above code like "0 1 1 0 0 1 2 ~ " is the result of main_controller_child.py**
 
 **The first 14 numbers are for the architecture for conv layers, and the rest are for pooling layers**
-
-## Enviroment
-- OS: Window 10(Ubuntu 16.04 is possible)
-
-- Python 3.5
-
-- Tensorflow-gpu version:  1.4.0rc2 
-
-- OpenCV 3.4.1
-
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
