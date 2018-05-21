@@ -85,19 +85,19 @@ class MicroController(Controller):
 
       self.g_emb = tf.get_variable("g_emb", [1, self.lstm_size]) # self.lstm_size = 64
       with tf.variable_scope("emb"):
-        self.w_emb = tf.get_variable("w", [self.num_branches, self.lstm_size]) # [4,64]
+        self.w_emb = tf.get_variable("w", [self.num_branches, self.lstm_size]) # [5,64]
       with tf.variable_scope("softmax"):
-        self.w_soft = tf.get_variable("w", [self.lstm_size, self.num_branches]) # [64,4]
+        self.w_soft = tf.get_variable("w", [self.lstm_size, self.num_branches]) # [64,5]
         b_init = np.array([10.0, 10.0] + [0] * (self.num_branches - 2),
-                          dtype=np.float32) # [10., 10., 0., 0.] dtype = np.float32
+                          dtype=np.float32) # [10., 10., 0., 0., 0.] dtype = np.float32
         self.b_soft = tf.get_variable(
           "b", [1, self.num_branches],
-          initializer=tf.constant_initializer(b_init)) # [1,4]
+          initializer=tf.constant_initializer(b_init)) # [1,5]
 
         b_soft_no_learn = np.array(
-          [0.25, 0.25] + [-0.25] * (self.num_branches - 2), dtype=np.float32) # array([ 0.25,  0.25, -0.25, -0.25], dtype=float32)
-        b_soft_no_learn = np.reshape(b_soft_no_learn, [1, self.num_branches]) # array([[ 0.25,  0.25, -0.25, -0.25]], dtype=float32)
-        self.b_soft_no_learn = tf.constant(b_soft_no_learn, dtype=tf.float32) # <tf.Tensor 'controller/softmax/Const:0' shape=(1, 4) dtype=float32>
+          [0.25, 0.25] + [-0.25] * (self.num_branches - 2), dtype=np.float32) # array([ 0.25,  0.25, -0.25, -0.25, -0.25], dtype=float32)
+        b_soft_no_learn = np.reshape(b_soft_no_learn, [1, self.num_branches]) # array([[ 0.25,  0.25, -0.25, -0.25, -0.25]], dtype=float32)
+        self.b_soft_no_learn = tf.constant(b_soft_no_learn, dtype=tf.float32) # <tf.Tensor 'controller/softmax/Const:0' shape=(1, 5) dtype=float32>
 
       with tf.variable_scope("attention"):
         self.w_attn_1 = tf.get_variable("w_1", [self.lstm_size, self.lstm_size]) # [64,64]
@@ -111,10 +111,10 @@ class MicroController(Controller):
     print("Build controller sampler")
 
     anchors = tf.TensorArray(
-      tf.float32, size=self.num_cells + 2, clear_after_read=False) # self.num_cells = 6 , size = 8
+      tf.float32, size=self.num_cells + 2, clear_after_read=False) # self.num_cells = 5, size = 7
     anchors_w_1 = tf.TensorArray(
-      tf.float32, size=self.num_cells + 2, clear_after_read=False) # self.num_cells = 6(number of node), size = 8
-    arc_seq = tf.TensorArray(tf.int32, size=self.num_cells * 4) # size = 24 # self.num_cell*4 = number of output
+      tf.float32, size=self.num_cells + 2, clear_after_read=False) # self.num_cells = 5, size = 7
+    arc_seq = tf.TensorArray(tf.int32, size=self.num_cells * 4) # size = 20 
     if prev_c is None: # at first
       assert prev_h is None, "prev_c and prev_h must both be None"
       prev_c = [tf.zeros([1, self.lstm_size], tf.float32)
