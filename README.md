@@ -48,7 +48,7 @@ The first 24 numbers are for the architecture for conv layers, and the rest are 
 
 ## Explained
 
-![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_init.PNG)
+![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_initi.PNG)
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
