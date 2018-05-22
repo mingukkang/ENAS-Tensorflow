@@ -67,17 +67,26 @@ First, we will build the sampler as shown in the picture below.
 To enable the Controller to make better networks, ENAS uses REINFORCE with a moving average baseline to reduce variance.
 
 ```python
-curr_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=index)
-log_prob += curr_log_prob
-curr_ent = tf.stop_gradient(tf.nn.softmax_cross_entropy_with_logits(
-logits=logits, labels=tf.nn.softmax(logits)))
-entropy += curr_ent
+<micro_controller.py>
 
-curr_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=op_id)
-log_prob += curr_log_prob
-curr_ent = tf.stop_gradient(tf.nn.softmax_cross_entropy_with_logits(
-logits=logits, labels=tf.nn.softmax(logits)))
-entropy += curr_ent
+for all index:
+    curr_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=index)
+    log_prob += curr_log_prob
+    curr_ent = tf.stop_gradient(tf.nn.softmax_cross_entropy_with_logits(
+    logits=logits, labels=tf.nn.softmax(logits)))
+    entropy += curr_ent
+
+for all op_id:
+    curr_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=op_id)
+    log_prob += curr_log_prob
+    curr_ent = tf.stop_gradient(tf.nn.softmax_cross_entropy_with_logits(
+    logits=logits, labels=tf.nn.softmax(logits)))
+    entropy += curr_ent
+
+arc_seq_1, entropy_1, log_prob_1, c, h = self._build_sampler(use_bias=True) # for convolution cell
+arc_seq_2, entropy_2, log_prob_2, _, _ = self._build_sampler(prev_c=c, prev_h=h) # for reduction cell 
+self.sample_entropy = entropy_1 + entropy_2
+self.sample_log_prob = log_prob_1 + log_prob_2    
 ```
 
 ```python
