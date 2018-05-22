@@ -56,7 +56,7 @@ First, we will build the sampler as shown in the picture below.
 
 <br/>Then we will make controller using sampler's output "next_c_1, next_h_1".
 
-<br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller.png)
+<br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller.PNG)
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
