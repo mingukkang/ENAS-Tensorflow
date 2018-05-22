@@ -58,7 +58,7 @@ First, we will build the sampler as shown in the picture below.
 
 <br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller.PNG)
 
-<br/>! After getting the "next_c_5, next_h_5", you must do the following to renew "Anchors, Anchors_w_1".
+<br/> After getting the "next_c_5, next_h_5", you must do the following to renew "Anchors,   Anchors_w_1".
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
