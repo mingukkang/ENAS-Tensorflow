@@ -62,6 +62,8 @@ First, we will build the sampler as shown in the picture below.
 
 <br/>![사진4](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Anchors_appen.PNG)
 
+### 2. Controller_Loss
+
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
