@@ -26,10 +26,10 @@ Unlike the author's code, This code can work in a windows 10 enviroment and you 
 ```
 Located in main_controller_child_train.py and main_child_trainer.py
 
-DEFINE_string("output_dir", "./output" , "")
-DEFINE_string("train_data_dir", "./data/train", "")
-DEFINE_string("val_data_dir", "./data/valid", "")
-DEFINE_string("test_data_dir", "./data/test", "")
+DEFINE_string("output_dir", , "./output")
+DEFINE_string("train_data_dir", , "./data/train")
+DEFINE_string("val_data_dir",  , "./data/valid")
+DEFINE_string("test_data_dir",  , "./data/test")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 ```
 
@@ -54,7 +54,7 @@ First, we will build the sampler as shown in the picture below.
 
 <br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_init.png)
 
-<br/>Then we will make controller using sampler's output "next_c_1, next_h_1.
+<br/>Then we will make controller using sampler's output "next_c_1, next_h_1".
 
 <br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_img.png)
 
