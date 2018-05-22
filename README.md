@@ -48,7 +48,7 @@ The first 24 numbers are for the architecture for conv layers, and the rest are 
 
 ## Explained
 
-*1. Controller*
+### 1. Controller
 
 First, we will build the sampler as shown in the picture below.
 
