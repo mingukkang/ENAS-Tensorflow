@@ -48,9 +48,10 @@ The first 24 numbers are for the architecture for conv layers, and the rest are 
 
 ## Explained
 
-**1. Controller**
+*1. Controller*
 
 First, we will build the sampler as shown in the picture below.
+
 ![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Attention_init_.PNG)
 
 
