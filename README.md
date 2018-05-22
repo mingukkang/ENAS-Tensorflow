@@ -108,6 +108,7 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
     self.loss = self.sample_log_prob * (self.reward - self.baseline)
 ```
 
+### 3. Child Network 
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
