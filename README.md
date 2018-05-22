@@ -63,7 +63,42 @@ First, we will build the sampler as shown in the picture below.
 <br/>![사진4](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Anchors_appen.PNG)
 
 ### 2. Controller_Loss
+
 To enable the Controller to make better networks, ENAS uses REINFORCE with a moving average baseline to reduce variance.
+
+```python
+curr_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=index)
+log_prob += curr_log_prob
+curr_ent = tf.stop_gradient(tf.nn.softmax_cross_entropy_with_logits(
+logits=logits, labels=tf.nn.softmax(logits)))
+entropy += curr_ent
+
+curr_log_prob = tf.nn.sparse_softmax_cross_entropy_with_logits(logits=logits, labels=op_id)
+log_prob += curr_log_prob
+curr_ent = tf.stop_gradient(tf.nn.softmax_cross_entropy_with_logits(
+logits=logits, labels=tf.nn.softmax(logits)))
+entropy += curr_ent
+```
+
+```python
+self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
+                      tf.to_float(child_model.batch_size))
+    self.reward = self.valid_acc 
+
+    if self.entropy_weight is not None:
+      self.reward += self.entropy_weight * self.sample_entropy
+
+    self.sample_log_prob = tf.reduce_sum(self.sample_log_prob)
+    self.baseline = tf.Variable(0.0, dtype=tf.float32, trainable=False)
+    baseline_update = tf.assign_sub(
+      self.baseline, (1 - self.bl_dec) * (self.baseline - self.reward))
+
+    with tf.control_dependencies([baseline_update]):
+      self.reward = tf.identity(self.reward)
+
+    self.loss = self.sample_log_prob * (self.reward - self.baseline)
+```
+
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
