@@ -63,6 +63,7 @@ First, we will build the sampler as shown in the picture below.
 <br/>![사진4](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Anchors_appen.PNG)
 
 ### 2. Controller_Loss
+To enable the Controller to make better networks, ENAS uses REINFORCE with a moving average baseline to reduce variance.
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
