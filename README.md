@@ -109,7 +109,8 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 ```
 
 ### 3. Child Network 
-<br/>1. Schematic of Child Network
+
+1. Schematic of Child Network
 
 <br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Child_Network.png)
 
