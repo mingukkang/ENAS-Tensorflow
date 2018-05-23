@@ -109,6 +109,7 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 ```
 
 ### 3. Child Network 
+
 1. how to make first two layers.
 
 
