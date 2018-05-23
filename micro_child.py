@@ -105,7 +105,7 @@ class MicroChild(Model):
             self.aux_head_indices = [self.pool_layers[-2] + 1]
 
     def _factorized_reduction(self, x, out_filters, stride,
-                              is_training):  # s = [?,48,32,32],out_filters = 96, stride = 2
+                              is_training): 
         """Reduces the shape of x without information loss due to striding."""
         assert out_filters % 2 == 0, (
             "Need even number of filters when using this factorized reduction.")
@@ -200,28 +200,28 @@ class MicroChild(Model):
         x = drop_path(x, drop_path_keep_prob)
         return x
 
-    def _maybe_calibrate_size(self, layers, out_filters, is_training):  # make the layers's channels = out_filters
+    def _maybe_calibrate_size(self, layers, out_filters, is_training): 
         """Makes sure layers[0] and layers[1] have the same shapes."""
         hw = [self._get_HW(layer) for layer in layers]  # [32,32] # [32,16]
         c = [self._get_C(layer) for layer in layers]  # [48*3 = 144] # [48,96]
 
         with tf.variable_scope("calibrate"):
-            x = layers[0]  # first conv layer
-            if hw[0] != hw[1]:  # if both layers hw is not same then we will modify this!
-                assert hw[0] == 2 * hw[1]  # originally hw[1] is lower than hw[1]
+            x = layers[0]  
+            if hw[0] != hw[1]:  
+                assert hw[0] == 2 * hw[1]  
                 with tf.variable_scope("pool_x"):
                     x = tf.nn.relu(x)
                     x = self._factorized_reduction(x, out_filters, 2, is_training)
-            elif c[0] != out_filters:  ## if c[0] != out_filters/////  if 144 != 48
+            elif c[0] != out_filters:  
                 with tf.variable_scope("pool_x"):
                     w = create_weight("w", [1, 1, c[0], out_filters])
                     x = tf.nn.relu(x)
                     x = tf.nn.conv2d(x, w, [1, 1, 1, 1], "SAME",
                                      data_format=self.data_format)
-                    x = batch_norm(x, is_training, data_format=self.data_format)  ## [?,48,32,32]
+                    x = batch_norm(x, is_training, data_format=self.data_format)  
 
-            y = layers[1]  # second conv layer = [?,128,32,32]
-            if c[1] != out_filters:  # if 144 is not 48
+            y = layers[1]  
+            if c[1] != out_filters:  
                 with tf.variable_scope("pool_y"):
                     w = create_weight("w", [1, 1, c[1], out_filters])
                     y = tf.nn.relu(y)
@@ -236,9 +236,8 @@ class MicroChild(Model):
             is_training = True
 
         with tf.variable_scope(self.name, reuse=reuse):
-            # the first two inputs
             with tf.variable_scope("stem_conv"):
-                w = create_weight("w", [3, 3, self.channel, self.out_filters * 3])  # 36*3 = 108
+                w = create_weight("w", [3, 3, self.channel, self.out_filters * 3])  
                 x = tf.nn.conv2d(
                     images, w, [1, 1, 1, 1], "SAME", data_format=self.data_format)
                 x = batch_norm(x, is_training, data_format=self.data_format)
@@ -251,23 +250,23 @@ class MicroChild(Model):
             layers = [x, x]
 
             # building layers in the micro space
-            out_filters = self.out_filters  # out_filters = 36
-            for layer_id in range(self.num_layers + 2):  # self.num_layers = 15 , so 15+2 = 17
+            out_filters = self.out_filters 
+            for layer_id in range(self.num_layers + 2):  
                 with tf.variable_scope("layer_{0}".format(layer_id)):
-                    if layer_id not in self.pool_layers:  ## self.pool_layers = [1,3]
+                    if layer_id not in self.pool_layers: 
                         if self.fixed_arc is None:
                             x = self._enas_layer(
-                                layer_id, layers, self.normal_arc, out_filters)  # out_filters = 48,
+                                layer_id, layers, self.normal_arc, out_filters)  
 
                         else:
                             x = self._fixed_layer(
                                 layer_id, layers, self.normal_arc, out_filters, 1, is_training,
                                 normal_or_reduction_cell="normal")
-                    else:  # layer_id is in [1,3]
-                        out_filters *= 2  ## 96
+                    else:  
+                        out_filters *= 2  
                         if self.fixed_arc is None:
                             x = self._factorized_reduction(x, out_filters, 2, is_training)
-                            layers = [layers[-1], x]  # layers[-1] is second cell!////// layers = [x,x]
+                            layers = [layers[-1], x]  
                             x = self._enas_layer(
                                 layer_id, layers, self.reduce_arc, out_filters)
                         else:
@@ -582,31 +581,31 @@ class MicroChild(Model):
         """Performs an enas convolution specified by the relevant parameters."""
 
         with tf.variable_scope("conv_{0}x{0}".format(filter_size)):
-            num_possible_inputs = curr_cell + 2  # curr_cell is cell_id, prev_cell is x_id, now 2
+            num_possible_inputs = curr_cell + 2  
             for conv_id in range(stack_conv):
                 with tf.variable_scope("stack_{0}".format(conv_id)):
                     # create params and pick the correct path
-                    inp_c = self._get_C(x)  # x is previous network [None, 48, 32,32] # inp_c = 48
+                    inp_c = self._get_C(x)  
                     w_depthwise = create_weight(
-                        "w_depth", [num_possible_inputs, filter_size * filter_size * inp_c])  # [2,48*3*3]
+                        "w_depth", [num_possible_inputs, filter_size * filter_size * inp_c]) 
                     w_depthwise = w_depthwise[prev_cell, :]
 
                     w_depthwise = tf.reshape(
-                        w_depthwise, [filter_size, filter_size, inp_c, 1])  # [3,3,48,1]
+                        w_depthwise, [filter_size, filter_size, inp_c, 1])  
 
                     w_pointwise = create_weight(
-                        "w_point", [num_possible_inputs, inp_c * out_filters])  # [2,48*3]
+                        "w_point", [num_possible_inputs, inp_c * out_filters])  
                     w_pointwise = w_pointwise[prev_cell, :]
-                    w_pointwise = tf.reshape(w_pointwise, [1, 1, inp_c, out_filters])  # [1,1,48,48]
+                    w_pointwise = tf.reshape(w_pointwise, [1, 1, inp_c, out_filters])  
 
                     with tf.variable_scope("bn"):
                         zero_init = tf.initializers.zeros(dtype=tf.float32)
                         one_init = tf.initializers.ones(dtype=tf.float32)
                         offset = create_weight(
-                            "offset", [num_possible_inputs, out_filters],  # [2,48]
+                            "offset", [num_possible_inputs, out_filters],  
                             initializer=zero_init)
                         scale = create_weight(
-                            "scale", [num_possible_inputs, out_filters],  # [2,48]
+                            "scale", [num_possible_inputs, out_filters],  
                             initializer=one_init)
                         offset = offset[prev_cell]
                         scale = scale[prev_cell]
@@ -636,14 +635,14 @@ class MicroChild(Model):
         assert len(prev_layers) == 2, "need exactly 2 inputs"
         layers = [prev_layers[0], prev_layers[1]]
         layers = self._maybe_calibrate_size(layers, out_filters,
-                                            is_training=True)  # make number of channels out_filters, at first our_filters = 48
+                                            is_training=True)  
         used = []
-        for cell_id in range(self.num_cells):  # self.num_cells == 5
-            prev_layers = tf.stack(layers, axis=0)  # [2,None,48,32,32] -> [3,None,48,32,32]
+        for cell_id in range(self.num_cells):  
+            prev_layers = tf.stack(layers, axis=0)  
             with tf.variable_scope("cell_{0}".format(cell_id)):
                 with tf.variable_scope("x"):
-                    x_id = arc[4 * cell_id]  # arc is Tensorarray [24], x_id = arc[0], connection
-                    x_op = arc[4 * cell_id + 1]  # arc[1], operation
+                    x_id = arc[4 * cell_id]  
+                    x_op = arc[4 * cell_id + 1] 
                     x = prev_layers[x_id, :, :, :, :]
                     x = self._enas_cell(x, cell_id, x_id, x_op, out_filters)
                     x_used = tf.one_hot(x_id, depth=self.num_cells + 2, dtype=tf.int32)
@@ -654,22 +653,22 @@ class MicroChild(Model):
                     y = prev_layers[y_id, :, :, :, :]
                     y = self._enas_cell(y, cell_id, y_id, y_op, out_filters)
                     y_used = tf.one_hot(y_id, depth=self.num_cells + 2,
-                                        dtype=tf.int32)  # because we already make 2 number of prev_layer, num_cells + 2
+                                        dtype=tf.int32)  
 
-                out = x + y  # not concatenate just add the result
+                out = x + y  
                 used.extend([x_used, y_used])
-                layers.append(out)  # finish making just one box module
+                layers.append(out)  
 
-        # this code is for final concatenate!
-        used = tf.add_n(used)  # add two list and the result will be [7], before it was [5,7]
-        indices = tf.where(tf.equal(used, 0))  # it will give you not used layer
-        indices = tf.to_int32(indices)  # give you not used layer number
+        
+        used = tf.add_n(used)  
+        indices = tf.where(tf.equal(used, 0))  
+        indices = tf.to_int32(indices)  
         indices = tf.reshape(indices, [-1])
-        num_outs = tf.size(indices)  # very various according to luck
-        out = tf.stack(layers, axis=0)  # stack the total result!  [7,?,48,32,32]
-        out = tf.gather(out, indices, axis=0)  # indices is not trained network!
+        num_outs = tf.size(indices)  
+        out = tf.stack(layers, axis=0)  
+        out = tf.gather(out, indices, axis=0)  
 
-        inp = prev_layers[0]  # first layer!
+        inp = prev_layers[0]  
         if self.data_format == "NHWC":
             N = tf.shape(inp)[0]
             H = tf.shape(inp)[1]
@@ -682,9 +681,9 @@ class MicroChild(Model):
             C = tf.shape(inp)[1]
             H = tf.shape(inp)[2]
             W = tf.shape(inp)[3]
-            out = tf.transpose(out, [1, 0, 2, 3, 4])  # n = ?, c = 48, h = 32, w = 32
+            out = tf.transpose(out, [1, 0, 2, 3, 4])  
             out = tf.reshape(out,
-                             [N, num_outs * out_filters, H, W])  ## why?? num outs is not number of not connected layer
+                             [N, num_outs * out_filters, H, W])  
         else:
             raise ValueError("Unknown data_format '{0}'".format(self.data_format))
 
@@ -707,9 +706,9 @@ class MicroChild(Model):
         print("Build train graph")
         logits = self._model(self.x_train, is_training=True)
         log_probs = tf.nn.sparse_softmax_cross_entropy_with_logits(
-            logits=logits, labels=self.y_train)  ## self.x_train [32,3,32,32] //  batch size is 32!
+            logits=logits, labels=self.y_train)  
 
-        self.loss = tf.reduce_mean(log_probs)  ## loss function for training
+        self.loss = tf.reduce_mean(log_probs)  
 
         if self.use_aux_heads:
             log_probs = tf.nn.sparse_softmax_cross_entropy_with_logits(
@@ -724,7 +723,7 @@ class MicroChild(Model):
 
         self.train_acc = tf.equal(self.train_preds, self.y_train)
         self.train_acc = tf.to_int32(self.train_acc)
-        self.train_acc = tf.reduce_sum(self.train_acc)  # we should divide self.train_acc by batch_size 32
+        self.train_acc = tf.reduce_sum(self.train_acc)  
 
         tf_variables = [
             var for var in tf.trainable_variables() if (
