@@ -120,9 +120,10 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     '''
     prev_layers : previous two layers. ex) layers[●,●]
-    ●'s shape = [None, H, W, C]
+    ●'s shape = [None, H, W, C]
     arc: [0, 0, 1, 4, 0, 0, 0, 3, 1, 4, 0, 3, 0, 0, 0, ...]
     '''
+    
     retrun output # calculated by arc, np.shape(output) = [None, H, W, out_filters]
 ```
 
@@ -134,6 +135,7 @@ def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
     x : x is last previous layer's output.
     out_filters: 2*(previous layer's channel)
     '''
+    
     stride_spec = self._get_strides(stride)  # [1,2,2,1]
     
     # Skip path 1
