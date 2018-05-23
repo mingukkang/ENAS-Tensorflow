@@ -49,8 +49,6 @@ class MicroChild(Model):
                  channel = None,
                  **kwargs
                  ):
-        """
-        """
 
         super(self.__class__, self).__init__(
             images,
