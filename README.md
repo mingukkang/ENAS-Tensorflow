@@ -125,6 +125,7 @@ def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     '''
     
     retrun output # calculated by arc, np.shape(output) = [None, H, W, out_filters]
+                  # if child_fixed_arc is not None, np.shape(output) = [None, H, W, 4*out_filters]
 ```
 
 (3) factorized_reduction
