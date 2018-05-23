@@ -120,10 +120,12 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     '''
     prev_layers : previous two layers. ex) layers[●,●]
+    ●'s shape = [None, H, W, C]
     arc: [0, 0, 1, 4, 0, 0, 0, 3, 1, 4, 0, 3, 0, 0, 0, ...]
     '''
-    retrun 
-    
+    retrun output calculated by arc # np.shape(output) = [None,H,W,out_filters]
+```
+
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
