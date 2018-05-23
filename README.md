@@ -46,7 +46,7 @@ The first 20 numbers are for the architecture for conv layers, and the rest are 
 
 ## Result
 
-<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Conv_cell_img.png)
+<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Conv_cell_img.JPG)
 
 ## Explained
 
