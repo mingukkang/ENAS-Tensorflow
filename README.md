@@ -108,6 +108,10 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
     self.loss = self.sample_log_prob * (self.reward - self.baseline)
 ```
 
+### 2. Controller_Loss
+
+To enable the Controller to make better networks, ENAS uses REINFORCE with a moving average baseline to reduce variance.
+
 ### 3. Child Network 
 
 1. Schematic of Child Network
