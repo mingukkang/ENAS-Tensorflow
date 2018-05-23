@@ -102,7 +102,7 @@ class MicroController(Controller):
       with tf.variable_scope("attention"):
         self.w_attn_1 = tf.get_variable("w_1", [self.lstm_size, self.lstm_size]) 
         self.w_attn_2 = tf.get_variable("w_2", [self.lstm_size, self.lstm_size]) 
-        self.v_attn = tf.get_variable("v", [self.lstm_size, 1]) # [64,1]
+        self.v_attn = tf.get_variable("v", [self.lstm_size, 1]) 
 
   def _build_sampler(self, prev_c=None, prev_h=None, use_bias=False):
     """Build the sampler ops and the log_prob ops."""
@@ -136,7 +136,7 @@ class MicroController(Controller):
     def _body(layer_id, inputs, prev_c, prev_h, anchors, anchors_w_1, arc_seq,
               entropy, log_prob):
       
-      indices = tf.range(0, layer_id, dtype=tf.int32) # [0,1]
+      indices = tf.range(0, layer_id, dtype=tf.int32) 
       start_id = 4 * (layer_id - 2) 
       prev_layers = []
       for i in range(2): 
