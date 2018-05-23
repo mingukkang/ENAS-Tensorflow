@@ -195,7 +195,39 @@ def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
     return final_path
 ```
 
-(4) Others
+(4) _maybe_calibrate_size
+
+```python
+def _maybe_calibrate_size(self, layers, out_filters, is_training): 
+    """Makes sure layers[0] and layers[1] have the same shapes."""
+    hw = [self._get_HW(layer) for layer in layers]  
+    c = [self._get_C(layer) for layer in layers]  
+
+    with tf.variable_scope("calibrate"):
+        x = layers[0]  
+        if hw[0] != hw[1]:  
+            assert hw[0] == 2 * hw[1]  
+            with tf.variable_scope("pool_x"):
+                x = tf.nn.relu(x)
+                x = self._factorized_reduction(x, out_filters, 2, is_training)
+        elif c[0] != out_filters:  
+            with tf.variable_scope("pool_x"):
+                w = create_weight("w", [1, 1, c[0], out_filters])
+                x = tf.nn.relu(x)
+                x = tf.nn.conv2d(x, w, [1, 1, 1, 1], "SAME", data_format=self.data_format)
+                x = batch_norm(x, is_training, data_format=self.data_format)  
+
+        y = layers[1]  
+        if c[1] != out_filters:  
+            with tf.variable_scope("pool_y"):
+                w = create_weight("w", [1, 1, c[1], out_filters])
+                y = tf.nn.relu(y)
+                y = tf.nn.conv2d(y, w, [1, 1, 1, 1], "SAME", data_format=self.data_format)
+                y = batch_norm(y, is_training, data_format=self.data_format)
+    return [x, y]
+```
+
+(5) Others
 
 You can see more details of the child network in <micro_child.py>
 
