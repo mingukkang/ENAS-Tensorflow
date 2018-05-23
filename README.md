@@ -4,8 +4,6 @@ I will explain the code of Efficient Neural Architecture Search(ENAS), especiall
 
 Unlike the author's code, This code can work in a windows 10 enviroment and you can use your own data.
 
-
-
 ## Enviroment
 - OS: Window 10(Ubuntu 16.04 is possible)
 
@@ -45,6 +43,10 @@ python main_child_trainer.py -n child_fixed_arc "0 0 1 4 0 0 0 3 1 4 0 3 0 0 0 0
 The string in the above code like "0 0 1 4 0 0 0 ~ " is the result of main_controller_child.py
 
 The first 20 numbers are for the architecture for conv layers, and the rest are for pooling layers.
+
+## Result
+
+<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Conv_cell.png)
 
 ## Explained
 
