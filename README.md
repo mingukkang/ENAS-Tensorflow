@@ -46,10 +46,13 @@ The first 20 numbers are for the architecture for conv layers, and the rest are 
 
 ## Result
 
-After training <main_controller_child_trainer.py>, we got the following child_arc_seq.
+After training <main_controller_child_trainer.py>, we got the following child_arc_seq and visualized it as shown below.
+
 ```
 "0 0 1 4 0 0 0 3 1 4 0 3 0 0 0 0 0 0 0 2 1 1 0 3 0 1 0 3 1 0 1 1 0 2 1 0 1 0 0 1"
 ```
+
+<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Conv_cell_img.JPG)
 
 <br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Conv_cell_img.JPG)
 
