@@ -124,7 +124,7 @@ class MicroChild(Model):
             x, [1, 1, 1, 1], stride_spec, "VALID", data_format=self.data_format)
 
         with tf.variable_scope("path1_conv"):
-            inp_c = self._get_C(path1)  # 48
+            inp_c = self._get_C(path1)  
             w = create_weight("w", [1, 1, inp_c, out_filters // 2])
             path1 = tf.nn.conv2d(path1, w, [1, 1, 1, 1], "VALID",
                                  data_format=self.data_format)
@@ -202,8 +202,8 @@ class MicroChild(Model):
 
     def _maybe_calibrate_size(self, layers, out_filters, is_training): 
         """Makes sure layers[0] and layers[1] have the same shapes."""
-        hw = [self._get_HW(layer) for layer in layers]  # [32,32] # [32,16]
-        c = [self._get_C(layer) for layer in layers]  # [48*3 = 144] # [48,96]
+        hw = [self._get_HW(layer) for layer in layers]  
+        c = [self._get_C(layer) for layer in layers]  
 
         with tf.variable_scope("calibrate"):
             x = layers[0]  
@@ -521,7 +521,6 @@ class MicroChild(Model):
         num_possible_inputs = curr_cell + 1
 
         with tf.variable_scope("avg_pool"):
-            # x is prev_layer[x_id] # [None,48,32,32]
             avg_pool = tf.layers.average_pooling2d(
                 x, [3, 3], [1, 1], "SAME", data_format=self.actual_data_format)
             avg_pool_c = self._get_C(avg_pool)
