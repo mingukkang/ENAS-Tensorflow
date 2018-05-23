@@ -175,6 +175,8 @@ def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
 
 You can see more details of the child network in <micro_child.py>
 
+### 4. How to train
+
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
