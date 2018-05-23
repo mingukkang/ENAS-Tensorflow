@@ -56,6 +56,7 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 
 <br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Reduction_cell_img.png)
 
+<br/> Test Accuracy of MNIST dataset is 99.xx%
 ## Explained
 
 ### 1. Controller
