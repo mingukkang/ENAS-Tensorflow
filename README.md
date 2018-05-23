@@ -114,7 +114,16 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 
 <br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Child_Network.png)
 
+(2) _enas_layers
 
+```python
+def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
+    '''
+    prev_layers : previous two layers. ex) layers[●,●]
+    arc: [0, 0, 1, 4, 0, 0, 0, 3, 1, 4, 0, 3, 0, 0, 0, ...]
+    '''
+    retrun 
+    
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
