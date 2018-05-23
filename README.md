@@ -126,6 +126,49 @@ def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     retrun output # calculated by arc, np.shape(output) = [None, H, W, out_filters]
 ```
 
+(3) factorized_reduction
+
+```python
+def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
+    '''
+    x : x is last previous layer's output.
+    out_filters: 2*(previous layer's channel)
+    '''
+    stride_spec = self._get_strides(stride)  # [1,2,2,1]
+    
+    # Skip path 1
+    path1 = tf.nn.avg_pool(x, [1, 1, 1, 1], stride_spec, "VALID", data_format=self.data_format)  
+
+    with tf.variable_scope("path1_conv"):
+        inp_c = self._get_C(path1)
+        w = create_weight("w", [1, 1, inp_c, out_filters // 2])  
+        path1 = tf.nn.conv2d(path1, w, [1, 1, 1, 1], "VALID", data_format=self.data_format)  
+
+        # Skip path 2
+        # First pad with 0"s on the right and bottom, then shift the filter to
+        # include those 0"s that were added.
+    if self.data_format == "NHWC":
+        pad_arr = [[0, 0], [0, 1], [0, 1], [0, 0]]
+        path2 = tf.pad(x, pad_arr)[:, 1:, 1:, :]
+        concat_axis = 3
+    else:
+        pad_arr = [[0, 0], [0, 0], [0, 1], [0, 1]]
+        path2 = tf.pad(x, pad_arr)[:, :, 1:, 1:]
+        concat_axis = 1
+
+    path2 = tf.nn.avg_pool(path2, [1, 1, 1, 1], stride_spec, "VALID", data_format=self.data_format)
+    with tf.variable_scope("path2_conv"):
+        inp_c = self._get_C(path2)
+        w = create_weight("w", [1, 1, inp_c, out_filters // 2])
+        path2 = tf.nn.conv2d(path2, w, [1, 1, 1, 1], "VALID", data_format=self.data_format)
+
+    # Concat and apply BN
+    final_path = tf.concat(values=[path1, path2], axis=concat_axis)
+    final_path = batch_norm(final_path, is_training, data_format=self.data_format)
+
+    return final_path
+''''
+
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
