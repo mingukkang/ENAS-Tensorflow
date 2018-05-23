@@ -167,7 +167,7 @@ def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
     final_path = batch_norm(final_path, is_training, data_format=self.data_format)
 
     return final_path
-''''
+```
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
