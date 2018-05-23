@@ -46,6 +46,8 @@ The first 20 numbers are for the architecture for conv layers, and the rest are 
 
 ## Result
 
+### 1. ENAS cells discoved in the micro search space
+
 After training <main_controller_child_trainer.py>, we got the following child_arc_seq and visualized it as shown below.
 
 ```
