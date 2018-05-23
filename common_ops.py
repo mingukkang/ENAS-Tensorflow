@@ -16,7 +16,7 @@ def lstm(x, prev_c, prev_h, w):
 
 def stack_lstm(x, prev_c, prev_h, w):
   next_c, next_h = [], []
-  for layer_id, (_c, _h, _w) in enumerate(zip(prev_c, prev_h, w)): # at first layer_id = 1,
+  for layer_id, (_c, _h, _w) in enumerate(zip(prev_c, prev_h, w)): 
     inputs = x if layer_id == 0 else next_h[-1]
     curr_c, curr_h = lstm(inputs, _c, _h, _w)
     next_c.append(curr_c)
