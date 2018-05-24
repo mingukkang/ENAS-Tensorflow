@@ -217,6 +217,9 @@ def train():
                                           FLAGS.channel,
                                           FLAGS.img_size,
                                           FLAGS.n_aug_img)
+    
+    print("Number of training data: %d" % (np.shape(images["train"][0])))
+    
     g = tf.Graph()
     with g.as_default():
         ops =get_ops(images, labels)
