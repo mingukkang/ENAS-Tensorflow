@@ -34,7 +34,7 @@ DEFINE_string("data_format","NHWC", "'NHWC or NCHW'")
 DEFINE_string("search_for", "micro","")
 
 DEFINE_integer("batch_size",144,"")
-DEFINE_integer("num_epochs", 630,"")
+DEFINE_integer("num_epochs", 200,"")
 
 DEFINE_integer("child_lr_dec_every", 100, "")
 DEFINE_integer("child_num_layers", 15, "Number of layer. IN this case we will calculate 4 conv and 2 pooling layers")
@@ -61,7 +61,7 @@ DEFINE_string("child_skip_pattern", None, "Must be ['dense', None]")
 DEFINE_string("child_fixed_arc", None, "")
 DEFINE_boolean("child_use_aux_heads", True, "Should we use an aux head")
 DEFINE_boolean("child_sync_replicas", False, "To sync or not to sync.")
-DEFINE_boolean("child_lr_cosine", True, "Use cosine lr schedule")
+DEFINE_boolean("child_lr_cosine", False, "Use cosine lr schedule")
 
 DEFINE_float("controller_lr", 0.001, "")
 DEFINE_float("controller_lr_dec_rate", 1.0, "")
