@@ -27,6 +27,8 @@ DEFINE_string("train_data_dir", "./data/train", "")
 DEFINE_string("val_data_dir", "./data/valid", "")
 DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
+DEFINE_integer("img_size", 32, "if size_img = 32 -> image: 32 x 32 x channel")
+DEFINE_integer("n_aug_img",2 , "num_img: 50000 -> aug_img: 200000")
 ##########################################################################
 
 DEFINE_boolean("reset_output_dir", True, "Delete output_dir if exists.")
@@ -209,8 +211,12 @@ def get_ops(images, labels):
 
 
 def train():
-    images, labels = data_utils.read_data(FLAGS.train_data_dir,FLAGS.val_data_dir,FLAGS.test_data_dir,FLAGS.channel)
-
+    images, labels = data_utils.read_data(FLAGS.train_data_dir,
+                                          FLAGS.val_data_dir,
+                                          FLAGS.test_data_dir,
+                                          FLAGS.channel,
+                                          FLAGS.img_size,
+                                          FLAGS.n_aug_img)
     g = tf.Graph()
     with g.as_default():
         ops =get_ops(images, labels)
