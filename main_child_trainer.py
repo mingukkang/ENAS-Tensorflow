@@ -28,7 +28,7 @@ DEFINE_string("val_data_dir", "./data/valid", "")
 DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 DEFINE_integer("img_size", 32, "if size_img = 32 -> image: 32 x 32 x channel")
-DEFINE_integer("n_aug_img",2 , "num_img: 50000 -> aug_img: 200000")
+DEFINE_integer("n_aug_img",2 , "if 2: num_img: 55000 -> aug_img: 110000")
 ##########################################################################
 
 DEFINE_boolean("reset_output_dir", True, "Delete output_dir if exists.")
@@ -218,7 +218,9 @@ def train():
                                           FLAGS.img_size,
                                           FLAGS.n_aug_img)
     
-    print("Number of training data: %d" % (np.shape(images["train"][0])))
+    n_data = np.shape(images["train"])[0]
+
+    print("Number of training data: %d" % (n_data))
     
     g = tf.Graph()
     with g.as_default():
