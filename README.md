@@ -4,7 +4,7 @@ I will explain the code of Efficient Neural Architecture Search(ENAS), especiall
 
 Unlike the author's code, This code can work in a windows 10 enviroment and you can use your own data.
 
-Also you can apply data augmentation using n_aug_img which is explained below. 
+Also you can apply data augmentation using "n_aug_img" which is explained below. 
 
 ## Enviroment
 - OS: Window 10(Ubuntu 16.04 is possible)
