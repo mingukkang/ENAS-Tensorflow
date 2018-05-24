@@ -285,7 +285,7 @@ class MicroChild(Model):
                     print("Using aux_head at layer {0}".format(layer_id))
                     with tf.variable_scope("aux_head"):
                         aux_logits = tf.nn.relu(x)
-                        if (aux_logits.get_shape()[2].value - 3)//5 ==0:
+                        if (aux_logits.get_shape()[2].value - 3) % 5 ==0:
                             aux_logits = tf.layers.average_pooling2d(
                                 aux_logits, [5, 5], [3, 3], "VALID",
                                 data_format=self.actual_data_format)
