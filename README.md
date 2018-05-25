@@ -251,7 +251,7 @@ You can see more details of the child network in <micro_child.py>
 
 <main_child_trainer.py>
 ```
-1. Train the child Network which is selected above as many as we want. (Momentum)
+1. Train the child Network which is selected above as many as we want. (Momentum optimization)
 ```
 
 ## References
