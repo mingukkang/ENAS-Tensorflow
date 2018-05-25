@@ -5,8 +5,6 @@ import cv2
 import numpy as np
 from glob import *
 import utils
-import pdb
-
 
 def _read_data(data_path, channel, img_size, n_aug_img):
 
