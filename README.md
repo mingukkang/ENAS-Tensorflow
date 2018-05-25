@@ -34,7 +34,7 @@ DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 DEFINE_integer("img_size", 32, "if size_img = 32 -> image: 32 x 32 x channel")
 DEFINE_integer("n_aug_img",1 , "num_img: 50000 -> aug_img: 200000")
 ```
-It is recommended to set n_aug_img = 1 to find the child network, and to use 2 ~ 4 to train the found child network.
+It is recommended to set "n_aug_img" = 1 to find the child network, and to use 2 ~ 4 to train the found child network.
 
 **<br/>Then, You can train Controller of ENAS with the following short code:**
 ```
@@ -61,11 +61,11 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 
 <br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Convolution_cell_img.png)
 
-<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Reduction_cell_img.png)
+<br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Reduction_cell_img.png)
 
 ### 2. Final structure of the child network
 
-<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Final_structure_child_network.png)
+<br/>![사진4](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Final_structure_child_network.png)
 
 ### 3. Test Accuracy
 
@@ -79,15 +79,15 @@ Test Accuracy : 99.xx%
 
 First, we will build the sampler as shown in the picture below.
 
-<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_init.png)
+<br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_init.png)
 
 <br/>Then we will make controller using sampler's output "next_c_1, next_h_1".
 
-<br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller.PNG)
+<br/>![사진6](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller.PNG)
 
 <br/> After getting the "next_c_5, next_h_5", you must do the following to renew "Anchors,   Anchors_w_1".
 
-<br/>![사진4](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Anchors_appen.PNG)
+<br/>![사진7](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Anchors_appen.PNG)
 
 ### 2. Controller_Loss
 
@@ -139,7 +139,7 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 
 (1) Schematic of Child Network
 
-<br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Schematic_child_network.png)
+<br/>![사진8](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Schematic_child_network.png)
 
 (2) _enas_layers
 
