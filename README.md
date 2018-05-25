@@ -244,7 +244,7 @@ You can see more details of the child network in <micro_child.py>
 
 2. Train the controller 'FLAGS.controller_train_steps x FLAGS.controller_num_aggregate' times. (Adam Optimization)
 
-3. perform as many weights updates as we want.
+3. Repeat as many weights updates as we want.
 
 4. Choose the child network architecture with the highest validation accuracy.
 ```
