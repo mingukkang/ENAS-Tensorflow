@@ -130,7 +130,7 @@ def get_ops(images, labels):
         lr_min=FLAGS.child_lr_min,
         lr_T_0=FLAGS.child_lr_T_0,
         lr_T_mul=FLAGS.child_lr_T_mul,
-        optim_algo="adam",
+        optim_algo="momentum",
         sync_replicas=FLAGS.child_sync_replicas,
         num_aggregate=FLAGS.child_num_aggregate,
         num_replicas=FLAGS.child_num_replicas,
