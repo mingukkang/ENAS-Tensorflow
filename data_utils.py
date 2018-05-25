@@ -77,15 +77,23 @@ def _read_data(data_path, channel, img_size, n_aug_img):
 
     images = []
     labels = []
+    idx = []
 
     for w in range(n_aug_img):
-        idx = np.random.permutation(length_data)
-        images.append(image_holder[idx].astype(np.float32))
-        labels.append(label_holder[idx])
+        total_data = length_data*n_aug_img
+        quota = (length_data//n_classes)
+        interval = total_data//n_classes
+
+        for r in range(n_classes):
+            temp = np.add(np.full((quota), interval*r + quota*w),np.random.permutation(quota))
+            idx.extend(temp)
+
+    images.append(image_holder[idx].astype(np.float32))
+    labels.append(label_holder[idx])
 
     images = np.concatenate(images, axis = 0)
     labels = np.concatenate(labels, axis = 0)
-    
+
     # normalizing
     mean = np.mean(images, axis=(0, 1, 2))
     std = np.std(images, axis=(0, 1, 2))
