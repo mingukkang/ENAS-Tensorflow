@@ -6,6 +6,8 @@ import numpy as np
 from glob import *
 import utils
 
+random.seed(random.randint(0, 2 ** 31 - 1))
+
 def _read_data(data_path, channel, img_size, n_aug_img):
 
     if n_aug_img == 1:
@@ -41,11 +43,6 @@ def _read_data(data_path, channel, img_size, n_aug_img):
             img = cv2.resize(img,(img_size,img_size))
             img = img.astype(np.float32)
 
-            # preprocessing
-            mean = np.mean(img, axis=(0, 1))
-            std = np.std(img, axis=(0, 1))
-            img = (img - mean) / std
-
             # Augmentation
             if aug_flag is True:
                 for k in range(n_aug_img - 1):
@@ -62,11 +59,6 @@ def _read_data(data_path, channel, img_size, n_aug_img):
         else:
             img = cv2.resize(img,(img_size,img_size))
             img = img.astype(np.float32)
-
-            # preprocessing
-            mean = np.mean(img, axis=(0, 1))
-            std = np.std(img, axis=(0, 1))
-            img = (img - mean) / std
 
             if aug_flag is True:
                 for k in range(n_aug_img - 1):
@@ -93,6 +85,11 @@ def _read_data(data_path, channel, img_size, n_aug_img):
 
     images = np.concatenate(images, axis = 0)
     labels = np.concatenate(labels, axis = 0)
+    
+    # normalizing
+    mean = np.mean(images, axis=(0, 1, 2))
+    std = np.std(images, axis=(0, 1, 2))
+    images = (images - mean) / std
 
     return images, labels
 
