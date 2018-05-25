@@ -1,6 +1,8 @@
 import sys
 import numpy as np
 import tensorflow as tf
+import matplotlib.pyplot as plt
+import os
 
 user_flags = []
 
@@ -36,7 +38,29 @@ def print_user_flags(line_limit = 80):
         log_string += "." * (line_limit - len(flag_name) - len(value))
         log_string += value
         print(log_string)
-
+        
+def plot_data_label(images, labels, channels, width, height, figsize):
+    # width = the number of images placed horizontally
+    # height = the number of image placed vertically
+    # figsize = white space between images
+    images = np.multiply(images, 255)
+    load_size = images.shape[1]
+    fig, axes = plt.subplots(width, height, figsize=(figsize, figsize))
+    fig.subplots_adjust(hspace=1, wspace=1)
+    path = os.getcwd() + "/plt_images"
+    if not os.path.exists(path):
+        os.makedirs(path)
+    for i, ax in enumerate(axes.flat):
+        if channels == 1:
+            ax.imshow(images[i].reshape(load_size, load_size))
+        else:
+            ax.imshow(images[i].reshape(load_size, load_size, channels))
+        ax.set_xlabel("label: %d" % (labels[i]))
+        file_name = path + "/image" + str(i)
+        ax.set_xticks([])
+        ax.set_yticks([])
+    plt.savefig(file_name)
+    plt.close()        
 
 class Logger(object):
     def __init__(self, output_file):
