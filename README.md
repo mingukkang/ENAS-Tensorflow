@@ -24,7 +24,7 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 **<br/> Next, You can change the following settings.**
 
 ```
-Located in main_controller_child_train.py and main_child_trainer.py
+<main_controller_child_train.py and main_child_trainer.py>
 
 DEFINE_string("output_dir", "./output" , "")
 DEFINE_string("train_data_dir", "./data/train", "")
