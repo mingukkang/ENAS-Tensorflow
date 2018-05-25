@@ -21,7 +21,7 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
 
-**<br/> Next, you should rewrite the code below.**
+**<br/> Next, You can change the following settings.**
 
 ```
 Located in main_controller_child_train.py and main_child_trainer.py
@@ -34,6 +34,7 @@ DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 DEFINE_integer("img_size", 32, "if size_img = 32 -> image: 32 x 32 x channel")
 DEFINE_integer("n_aug_img",1 , "num_img: 50000 -> aug_img: 200000")
 ```
+It is recommended to set n_aug_img = 1 to find the child network, and to use 2 ~ 4 to train the found child network.
 
 **<br/>Then, You can train Controller of ENAS with the following short code:**
 ```
