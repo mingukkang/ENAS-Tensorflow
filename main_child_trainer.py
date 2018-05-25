@@ -12,6 +12,7 @@ from utils import DEFINE_float
 from utils import DEFINE_integer
 from utils import DEFINE_string
 from utils import print_user_flags
+from utils import plot_data_label
 
 import data_utils
 
