@@ -254,7 +254,6 @@ You can see more details of the child network in <micro_child.py>
 1. Train the child Network which is selected above as many as we want. (Momentum)
 ```
 
-<main_con
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
