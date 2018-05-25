@@ -64,7 +64,7 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 
 ### 2. Final structure of the child network
 
-<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/overview_child_network.png)
+<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Final_structure_child_network.png)
 
 ### 3. Test Accuracy
 
