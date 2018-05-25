@@ -28,14 +28,14 @@ DEFINE_string("val_data_dir", "./data/valid", "")
 DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
 DEFINE_integer("img_size", 32, "if size_img = 32 -> image: 32 x 32 x channel")
-DEFINE_integer("n_aug_img",2 , "if 2: num_img: 55000 -> aug_img: 110000, elif 1: False")
+DEFINE_integer("n_aug_img",4 , "if 2: num_img: 55000 -> aug_img: 110000, elif 1: False")
 ##########################################################################
 
 DEFINE_boolean("reset_output_dir", True, "Delete output_dir if exists.")
 DEFINE_string("data_format","NHWC", "'NHWC or NCHW'")
 DEFINE_string("search_for", "micro","")
 
-DEFINE_integer("batch_size",144,"")
+DEFINE_integer("batch_size",160,"")
 DEFINE_integer("num_epochs", 200,"")
 
 DEFINE_integer("child_lr_dec_every", 100, "")
