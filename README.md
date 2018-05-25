@@ -237,6 +237,24 @@ You can see more details of the child network in <micro_child.py>
 
 ### 4. How to train
 
+<main_child_controller_trainer.py>
+```
+1. Train the Child Network during 1 Epoch. (Momentum optimization)
+※ 1 Epoch = (Total data size / batch size) times parameters update.
+
+2. Train the controller 'FLAGS.controller_train_steps x FLAGS.controller_num_aggregate' times. (Adam Optimization)
+
+3. perform as many weights updates as we want.
+
+4. Choose the child network architecture with the highest validation accuracy.
+```
+
+<main_child_trainer.py>
+```
+1. Train the child Network which is selected above as many as we want.
+```
+
+<main_con
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
