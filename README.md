@@ -17,7 +17,7 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 
 ## How to run
 
-**<br/>At first, you should unpack the attacged data as shown below.**
+**<br/>At first, you should unpack the attached data as shown below.**
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
 
