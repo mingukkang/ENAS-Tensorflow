@@ -117,6 +117,8 @@ self.sample_log_prob = log_prob_1 + log_prob_2
 ```
 
 ```python
+<micro_controller.py>
+
 self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
                       tf.to_float(child_model.batch_size))
     self.reward = self.valid_acc 
@@ -144,6 +146,8 @@ self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
 (2) _enas_layers
 
 ```python
+<micro_child.py>
+
 def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     '''
     prev_layers : previous two layers. ex) layers[●,●]
@@ -163,6 +167,8 @@ def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
 (3) factorized_reduction
 
 ```python
+<micro_child.py>
+
 def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
     '''
     x : x is last previous layer's output.
@@ -207,6 +213,8 @@ def factorized_reduction(self, x, out_filters, strides = 2, is_training = True):
 (4) _maybe_calibrate_size
 
 ```python
+<micro_child.py>
+
 def _maybe_calibrate_size(self, layers, out_filters, is_training): 
     """Makes sure layers[0] and layers[1] have the same shapes."""
     hw = [self._get_HW(layer) for layer in layers]  
