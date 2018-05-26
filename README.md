@@ -257,14 +257,14 @@ You can see more details of the child network in <micro_child.py>
 
 2. Train the controller 'FLAGS.controller_train_steps x FLAGS.controller_num_aggregate' times. (Adam Optimization)
 
-3. Repeat "1", "2" as many as we want.
+3. Repeat "1", "2" as many as we want.(160 Epochs)
 
 4. Choose the child network architecture with the highest validation accuracy.
 ```
 
 <main_child_trainer.py>
 ```
-1. Train the child Network which is selected above as many as we want. (Momentum optimization)
+1. Train the child Network which is selected above as many as we want. (Momentum optimization, 660 Epochs)
 ```
 
 ## References
