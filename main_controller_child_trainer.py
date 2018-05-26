@@ -28,7 +28,7 @@ DEFINE_string("train_data_dir", "./data/train", "")
 DEFINE_string("val_data_dir", "./data/valid", "")
 DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
-DEFINE_integer("img_size", 32, "if size_img = 32 -> image: 32 x 32 x channel")
+DEFINE_integer("img_size", 32, "if size_img = 32 -> image = np.shape(32,32,channel)")
 DEFINE_integer("n_aug_img",1 , "if 2: num_img: 55000 -> aug_img: 110000, elif 1: False")
 ##########################################################################
 
@@ -37,7 +37,7 @@ DEFINE_string("data_format","NHWC", "'NHWC or NCHW'")
 DEFINE_string("search_for", "micro","")
 
 DEFINE_integer("batch_size",160,"")
-DEFINE_integer("num_epochs", 150,"")
+DEFINE_integer("num_epochs", 150," = (10+ 20+ 40+ 80)")
 
 DEFINE_integer("child_lr_dec_every", 100, "")
 DEFINE_integer("child_num_layers", 6, "Number of layer. IN this case we will calculate 4 conv and 2 pooling layers")
