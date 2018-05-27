@@ -59,7 +59,7 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 "0 1 0 1 0 3 0 0 2 2 0 2 1 0 0 1 1 3 0 1 1 1 0 1 0 1 2 1 0 0 0 0 0 0 1 3 1 1 0 1"
 ```
 
-<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Conv_cell.png)
+<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/convolution_cell.png)
 
 <br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Reduction_cell.png)
 
