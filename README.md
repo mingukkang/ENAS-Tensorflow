@@ -269,7 +269,7 @@ You can see more details of the child network in <micro_child.py>
 
 ## Augmentation Option
 
-```
+```python
 def aug(image, idx):
     augmentation_dic = {0: enlarge(image, 1.2),
                         1: rotation(image),
@@ -279,6 +279,9 @@ def aug(image, idx):
     image = augmentation_dic[idx]
     return image
 ```
+
+Function enlarge, rotation, random_bright_contrast and gaussian_noise are writen using cv2.
+you can check more details in <data_utils.py>
 
 
 ## References
