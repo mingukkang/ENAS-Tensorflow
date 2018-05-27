@@ -152,7 +152,7 @@ def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     '''
     prev_layers : previous two layers. ex) layers[●,●]
     ●'s shape = [None, H, W, C]
-    arc: [0, 0, 1, 4, 0, 0, 0, 3, 1, 4, 0, 3, 0, 0, 0, ...]
+    arc: "0 1 0 1 0 3 0 0 2 2 0 2 1 0 0 1 1 3 0 1 1 1 0 1 0 1 2 1 0 0 0 0 0 0 1 3 1 1 0 1"
     out = [self._enas_conv(x, curr_cell, prev_cell, 3, out_filters), 
            self._enas_conv(x, curr_cell, prev_cell, 5, out_filters),
            avg_pool,
