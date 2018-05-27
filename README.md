@@ -288,6 +288,7 @@ you can check more details in <data_utils.py>
 
 ### 2. Images
 
+<br/>![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Augmentation.png)
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
