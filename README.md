@@ -267,6 +267,20 @@ You can see more details of the child network in <micro_child.py>
 1. Train the child Network which is selected above as many as we want. (Momentum optimization, 660 Epochs)
 ```
 
+## Augmentation Option
+
+```
+def aug(image, idx):
+    augmentation_dic = {0: enlarge(image, 1.2),
+                        1: rotation(image),
+                        2: random_bright_contrast(image),
+                        3: gaussian_noise(image)}
+
+    image = augmentation_dic[idx]
+    return image
+```
+
+
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
