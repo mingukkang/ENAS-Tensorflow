@@ -283,6 +283,7 @@ def aug(image, idx):
 ```
 
 Function enlarge, rotation, random_bright_contrast and gaussian_noise are writen using cv2.
+
 you can check more details in <data_utils.py>
 
 ### 2. Images
