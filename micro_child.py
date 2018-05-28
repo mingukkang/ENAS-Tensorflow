@@ -97,9 +97,12 @@ class MicroChild(Model):
 
         if self.drop_path_keep_prob is not None:
             assert num_epochs is not None, "Need num_epochs to drop_path"
-
-        pool_distance = self.num_layers // 4
+        '''
+        pool_distance = self.num_layers //4
         self.pool_layers = [pool_distance, 2 * pool_distance + 1, self.num_layers]
+        '''
+        pool_distance = self.num_layers // 3
+        self.pool_layers = [pool_distance, 2 * pool_distance + 1]
 
         if self.use_aux_heads:
             self.aux_head_indices = [self.pool_layers[-2] + 1]
