@@ -72,8 +72,9 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 ```
 Test Accuracy : 99.57%
 ```
-(My opion) Because of learning rate, It seems not to reach global optima. 
-           <br/>So I think changing "child_lr_min" will make the Accuracy higher.
+(My opion) 
+
+Because of learning rate, It seems not to reach global optima. So I think changing "child_lr_min" will make the Accuracy higher.
 
 ## Explained
 
