@@ -74,7 +74,9 @@ Test Accuracy : 99.57%
 ```
 (My opion) 
 
-Because of learning rate, It seems not to reach global optima. So I think changing "child_lr_min" will make the Accuracy higher.
+Because of learning rate, It seems not to reach global optima. 
+
+So I think if you change "child_lr_min", you will get higher Accuracy.
 
 ## Explained
 
