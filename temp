@@ -1,0 +1,17 @@
+import tensorflow as tf
+import numpy as np
+import os
+import cv2
+
+from tensorflow.python.keras._impl.keras.datasets.cifar10 import load_data
+(x_train, y_train), (x_test, y_test) = load_data()
+
+path_train = "/home/minguk/Documents/data/train"
+path_test = "/home/minguk/Documents/data/test"
+length_train = len(x_train)
+length_test  = len(y_test)
+for i in range(length_train):
+    path_train = "/home/minguk/Documents/data/train"
+    path_train = path_train + "/" + str(y_train[i][0])
+    print(path_train)
+    cv2.imwrite(os.path.join(path_train, str(i) + ".png"), x_train[i])
