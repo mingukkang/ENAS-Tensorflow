@@ -180,6 +180,9 @@ def img_augmentation(image):
                             2: random_bright_contrast(image),
                             3: gaussian_noise(image),
                             4: flip(image)}
+        
+        image = augmentation_dic[idx]
+        return image
                             
     p =[random.random() for m in range(5)] # 5 is number of augmentation operation
     for n in range(len(p)):
