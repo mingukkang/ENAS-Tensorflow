@@ -124,6 +124,11 @@ def read_data(train_dir,val_dir, test_dir, channel, img_size, n_aug_img):
     return images, labels
 
 def img_augmentation(image):
+    
+    def flip(image):
+        img_filped = cv2.flip(image,1)
+        
+        return img_filped
 
     def enlarge(image,magnification):
 
@@ -167,7 +172,22 @@ def img_augmentation(image):
 
         image = augmentation_dic[idx]
         return image
+    
+    ''' augmentation for cifar10 
+    def aug(image, idx):
+        augmentation_dic = {0: enlarge(image, 1.2),
+                            1: rotation(image),
+                            2: random_bright_contrast(image),
+                            3: gaussian_noise(image),
+                            4: flip(image)}
+                            
+    p =[random.random() for m in range(5)] # 5 is number of augmentation operation
+    for n in range(len(p)):
+        if p[n] > 0.5:
+            image = aug(image, n)
 
+    return image                            
+    '''
 
     p =[random.random() for m in range(4)] # 4 is number of augmentation operation
     for n in range(len(p)):
