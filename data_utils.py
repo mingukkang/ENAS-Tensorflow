@@ -6,7 +6,6 @@ import numpy as np
 from glob import *
 import utils
 from utils import plot_data_label
-import pdb
 
 random.seed(random.randint(0, 2 ** 31 - 1))
 
