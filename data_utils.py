@@ -110,7 +110,7 @@ def _read_data(data_path, channel, img_size, n_aug_img):
     for b in range(n_batch_mean):
         mean += np.mean(images[b], axis = (0,1,2))/n_batch_mean
         std += np.std(images[b], axis = (0,1,2))/n_batch_mean
-    plot_data_label(images[0:64]/255, labels[0:64],3,8,8,8)
+    plot_data_label(images[0:64]/255, labels[0:64],channel ,8,8,8)
     print(data_path)
     print("Mean:", mean)
     print("Std:", std)
