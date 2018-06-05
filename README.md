@@ -325,7 +325,7 @@ In the case of MNIST Data, I do not apply flip! you can check more details in <d
 ### 2. Images
 
 #### MNIST
-![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/MNIST_Aug.png)
+![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/MNIST_augmentation.PNG)
 
 #### CIFAR10
 ![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/MNIST_Aug.png)
