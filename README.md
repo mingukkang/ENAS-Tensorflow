@@ -9,7 +9,7 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 ## Enviroment
 - OS: Window 10(Ubuntu 16.04 is possible)
 
-- GRAPHIC CARD /RAM : 1080TI /32G
+- Graphic Card /RAM : 1080TI /32G
 
 - Python 3.5
 
