@@ -24,7 +24,7 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 
 ![사진1](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/unpack.PNG)
 
-**<br/> Next, You can change the following settings.**
+**<br/> Next, You should change the code below to suit your situation.**
 
 ```
 <main_controller_child_trainer.py and main_child_trainer.py>
