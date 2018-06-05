@@ -284,10 +284,10 @@ def aug(image, idx):
     augmentation_dic = {0: enlarge(image, 1.2),
                         1: rotation(image),
                         2: random_bright_contrast(image),
-                        3: gaussian_noise(image)}
+                        3: Flip(image)}
 
-    image = augmentation_dic[idx]
-    return image
+        image = augmentation_dic[idx]
+        return image
 ```
 
 Function enlarge, rotation, random_bright_contrast and gaussian_noise are writen using cv2.
