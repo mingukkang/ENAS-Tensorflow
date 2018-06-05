@@ -15,6 +15,8 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 
 - OpenCV 3.4.1
 
+- RAM : 32G
+
 ## How to run
 
 **<br/>At first, you should unpack the attached data as shown below.**
