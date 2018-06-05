@@ -36,7 +36,7 @@ DEFINE_string("train_data_dir", "./data/train", "")
 DEFINE_string("val_data_dir", "./data/valid", "")
 DEFINE_string("test_data_dir", "./data/test", "")
 DEFINE_integer("channel",1, "MNIST: 1, Cifar10: 3")
-DEFINE_integer("img_size", 32, "if size_img = 32 -> np.shape(image) = (1,32,32,channel)")
+DEFINE_integer("img_size", 32, "enlarge image size")
 DEFINE_integer("n_aug_img",1 , "if 2: num_img: 55000 -> aug_img: 110000, elif 1: False")
 ```
 It is recommended to set "n_aug_img" = 1 to find the child network, and to use 2 ~ 4 to train the found child network.
