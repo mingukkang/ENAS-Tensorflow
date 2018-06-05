@@ -98,14 +98,13 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 ```
 MNIST
 Test Accuracy : 99.57%
-```
 
 (My opion) 
 
 Because of learning rate, It seems not to reach global optima. 
 
 So I think if you change "child_lr_min", you will get higher Accuracy.
-
+```
 
 ```
 CIFAR 10
