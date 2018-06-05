@@ -48,7 +48,7 @@ python main_controller_child_trainer.py
 **<br/>After finishing,   you can train the child network with the following code:**
 
 ```
-Case of MNIST Data
+Case of MNIST 
 
 python main_child_trainer.py --child_fixed_arc "1 2 1 3 0 1 0 4 1 1 1 1 0 1 0 1 1 0 0 1 0 1 0 4 1 0 2 0 0 3 1 1 0 0 0 0 4 1 1 0"
 ```
