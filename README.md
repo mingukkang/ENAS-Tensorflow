@@ -256,7 +256,7 @@ def _maybe_calibrate_size(self, layers, out_filters, is_training):
 
 You can see more details of the child network in <micro_child.py>
 
-### 4. How to train
+### 4. Summary of learning mechanism
 
 <main_child_controller_trainer.py>
 ```
