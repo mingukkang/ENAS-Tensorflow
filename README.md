@@ -286,11 +286,13 @@ def aug(image, idx):
                         2: random_bright_contrast(image),
                         3: Flip(image)}
 
-        image = augmentation_dic[idx]
-        return image
+    image = augmentation_dic[idx]
+    return image
 ```
 
-Function enlarge, rotation, random_bright_contrast and gaussian_noise are writen using cv2.
+Function enlarge, rotation, random_bright_contrast and Flip are writen using cv2.
+
+In the case of MNIST Data, I do not apply flip!
 
 you can check more details in <data_utils.py>
 
