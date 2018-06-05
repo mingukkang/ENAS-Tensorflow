@@ -46,8 +46,17 @@ It is recommended to set "n_aug_img" = 1 to find the child network, and to use 2
 python main_controller_child_trainer.py
 ```
 **<br/>After finishing,   you can train the child network with the following code:**
+
 ```
-python main_child_trainer.py --child_fixed_arc "0 1 0 1 0 3 0 0 2 2 0 2 1 0 0 1 1 3 0 1 1 1 0 1 0 1 2 1 0 0 0 0 0 0 1 3 1 1 0 1"
+Case of MNIST Data
+
+python main_child_trainer.py --child_fixed_arc "1 2 1 3 0 1 0 4 1 1 1 1 0 1 0 1 1 0 0 1 0 1 0 4 1 0 2 0 0 3 1 1 0 0 0 0 4 1 1 0"
+```
+
+```
+Case of Cifar 10
+
+python main_child_trainer.py --child_fixed_arc "1 0 1 1 1 1 0 0 1 1 0 0 0 3 0 3 1 3 1 1 1 1 0 3 0 3 0 3 1 3 0 1 1 3 0 2 0 3 1 0"
 ```
 
 The string in the above code like "0 1 0 1 0 3 0 ~ " is the result of main_controller_child_trainer.py
