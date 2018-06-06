@@ -155,7 +155,7 @@ self.sample_log_prob = log_prob_1 + log_prob_2
 ```python
 <micro_controller.py>
 
-self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
+    self.valid_acc = (tf.to_float(child_model.valid_shuffle_acc) /
                       tf.to_float(child_model.batch_size))
     self.reward = self.valid_acc 
 
