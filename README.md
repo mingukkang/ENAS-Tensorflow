@@ -91,6 +91,7 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 
 ### 2. Final structure of the child network
 
+#### CIFAR 10
 <br/>![사진4](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Final_structure_child_network.png)
 
 ### 3. Test Accuracy
