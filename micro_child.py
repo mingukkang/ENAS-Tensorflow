@@ -692,7 +692,7 @@ class MicroChild(Model):
             raise ValueError("Unknown data_format '{0}'".format(self.data_format))
 
         with tf.variable_scope("final_conv"):
-            w = create_weight("w", [self.num_cells + 2, out_filters * out_filters])  # [7,48*48]
+            w = create_weight("w", [self.num_cells + 2, out_filters * out_filters])
             w = tf.gather(w, indices, axis=0)
             w = tf.reshape(w, [1, 1, num_outs * out_filters, out_filters])
             out = tf.nn.relu(out)
