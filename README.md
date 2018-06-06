@@ -198,7 +198,8 @@ def _enas_layers(self, layer_id, prev_layers, arc, out_filters):
     '''
     
     retrun output # calculated by arc, np.shape(output) = [None, H, W, out_filters]
-                  # if child_fixed_arc is not None, np.shape(output) = [None, H, W, 4*out_filters]
+                  # if child_fixed_arc is not None, np.shape(output) = [None, H, W, n*out_filters]
+                  # where n is the number of not being used nodes in the coonv cell or Reduction cell.
 ```
 
 (3) factorized_reduction
