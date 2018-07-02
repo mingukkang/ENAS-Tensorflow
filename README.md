@@ -369,7 +369,6 @@ In the case of MNIST Data, I do not apply flip! you can check more details in <d
 </tr>
 </table>
 
-
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
 
