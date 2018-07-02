@@ -11,8 +11,6 @@ Also you can apply data augmentation using "n_aug_img" which is explained below.
 
 - Graphic Card /RAM : 1080TI /32G
 
-    (This code uses a lot of memory :( ,   I will reslove this issue as soon as possible.)
-
 - Python 3.5
 
 - Tensorflow-gpu version:  1.4.0rc2 
