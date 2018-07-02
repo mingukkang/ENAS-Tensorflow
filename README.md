@@ -99,6 +99,10 @@ After training <main_controller_child_trainer.py>, we got the following child_ar
 "1 0 0 1 0 0 1 1 2 2 1 1 1 1 1 2 1 0 0 0 0 0 0 3 2 2 1 0 2 0 2 3 0 3 4 0 1 0 3 2"
 ```
 
+<br/>![사진2](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Welding_Defects_Convolutional_Cell.png)
+
+<br/>![사진3](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Welding_Defects_Reduction_Cell.png)
+
 ### 2. Final structure of the child network
 
 #### MNIST
