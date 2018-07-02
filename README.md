@@ -133,11 +133,32 @@ Test Accuracy : 100.00%
 
 ### 4. Graphs
 
-<br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Controller_reward_graph.png)
+<table align='center'>
+<tr align='center'>
+<td> Controller Validation Accuracy(reward) </td>
+</tr>
+<tr>
+<td><img src = 'images/Controller_reward_graph.png' height = '300px'>
+</tr>
+</table>
 
-<br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/MNIST_child_network_graph.png)
+<table align='center'>
+<tr align='center'>
+<td> Child Test Accuracy ＆ Loss for MNIST Dataset</td>
+</tr>
+<tr>
+<td><img src = 'images/MNIST_child_network_graph.png' height = '400px'>
+</tr>
+</table>
 
-<br/>![사진5](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Welding_Child_network_graph.png)
+<table align='center'>
+<tr align='center'>
+<td> Child Test Accuracy ＆ Loss for Welding Defects Dataset </td>
+</tr>
+<tr>
+<td><img src = 'images/Welding_Child_network_graph.png' height = '400px'>
+</tr>
+</table>
 
 ## Explained
 
