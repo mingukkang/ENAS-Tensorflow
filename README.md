@@ -358,7 +358,16 @@ In the case of MNIST Data, I do not apply flip! you can check more details in <d
 ![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Cifar10_AUG.png)
 
 #### Welding Defects
-![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Cifar10_AUG.png)
+<table align='center'>
+<tr align='center'>
+<td> Welding OK </td>
+<td> Welding NG </td>
+</tr>
+<tr>
+<td><img src = 'images/Welding_OK.jpg' height = '400px'>
+<td><img src = 'images/Welding_NG.jpg' height = '400px'>
+</tr>
+</table>
 
 
 ## References
