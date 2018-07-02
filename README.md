@@ -331,7 +331,8 @@ def aug(image, idx):
     augmentation_dic = {0: enlarge(image, 1.2),
                         1: rotation(image),
                         2: random_bright_contrast(image),
-                        3: Flip(image)}
+                        3: gaussian_noise(image),
+                        4: Flip(image)}
 
     image = augmentation_dic[idx]
     return image
