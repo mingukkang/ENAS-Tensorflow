@@ -57,6 +57,12 @@ Case of Cifar 10
 python main_child_trainer.py --child_fixed_arc "1 0 1 1 1 1 0 0 1 1 0 0 0 3 0 3 1 3 1 1 1 1 0 3 0 3 0 3 1 3 0 1 1 3 0 2 0 3 1 0"
 ```
 
+```
+Case of Welding Defects
+
+python main_child_trainer.py --child_fixed_arc "1 0 0 1 0 0 1 1 2 2 1 1 1 1 1 2 1 0 0 0 0 0 0 3 2 2 1 0 2 0 2 3 0 3 4 0 1 0 3 2"
+```
+
 The string in the above code like "1 2 1 3 0 1 ~ " is the result of main_controller_child_trainer.py
 
 The first 20 numbers are for the architecture for convolution layers, and the rest are for pooling layers.
