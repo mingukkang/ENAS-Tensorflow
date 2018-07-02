@@ -348,11 +348,18 @@ In the case of MNIST Data, I do not apply flip! you can check more details in <d
 
 ### 2. Images
 
+## Graphs
+
+
 #### MNIST
 ![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/MNIST_AUG.png)
 
 #### CIFAR10
 ![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Cifar10_AUG.png)
+
+#### Welding Defects
+![사진9](https://github.com/MINGUKKANG/ENAS-Tensorflow/blob/master/images/Cifar10_AUG.png)
+
 
 ## References
 **Paper: https://arxiv.org/abs/1802.03268**
