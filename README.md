@@ -147,7 +147,7 @@ Test Accuracy : 100.00%
 <td> Child Test Accuracy ＆ Loss for MNIST Dataset</td>
 </tr>
 <tr>
-<td><img src = 'images/MNIST_child_network_graph.png' height = '400px'>
+<td><img src = 'images/MNIST_child_network_graph.png' height = '300px'>
 </tr>
 </table>
 
@@ -156,7 +156,7 @@ Test Accuracy : 100.00%
 <td> Child Test Accuracy ＆ Loss for Welding Defects Dataset </td>
 </tr>
 <tr>
-<td><img src = 'images/Welding_Child_network_graph.png' height = '400px'>
+<td><img src = 'images/Welding_Child_network_graph.png' height = '300px'>
 </tr>
 </table>
 
