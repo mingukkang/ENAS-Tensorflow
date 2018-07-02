@@ -364,8 +364,8 @@ In the case of MNIST Data, I do not apply flip! you can check more details in <d
 <td> Welding NG </td>
 </tr>
 <tr>
-<td><img src = 'images/Welding_OK.jpg' height = '400px'>
-<td><img src = 'images/Welding_NG.jpg' height = '400px'>
+<td><img src = 'images/Welding_OK.jpg' height = '250px'>
+<td><img src = 'images/Welding_NG.jpg' height = '250px'>
 </tr>
 </table>
 
